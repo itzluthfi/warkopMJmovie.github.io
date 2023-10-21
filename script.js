@@ -1,6 +1,6 @@
 // halaman awal
 $.ajax({
-  url: "http://www.omdbapi.com/?i=tt3896198&apikey=d48c8ef8&s=harry potter",
+  url: "https://www.omdbapi.com/?i=tt3896198&apikey=d48c8ef8&s=harry potter",
   success: (hasil) => {
     const movies = hasil.Search;
     console.log(movies);
@@ -13,7 +13,7 @@ $.ajax({
     $(".movie-detail-button").on("click", function () {
       let dataImdbid = $(this).data("imdbid");
       $.ajax({
-        url: `http://www.omdbapi.com/?i=${dataImdbid}&apikey=d48c8ef8&=`,
+        url: `https://www.omdbapi.com/?i=${dataImdbid}&apikey=d48c8ef8&=`,
         success: (m) => {
           const movieDetails = showDetailMovies(m);
           console.log(m);
@@ -91,7 +91,7 @@ $(".tombol-pencarian").on("click", function () {
   $(".loading").toggleClass("d-none");
 
   $.ajax({
-    url: `http://www.omdbapi.com/?i=tt3896198&apikey=d48c8ef8&s=${inputValue}`,
+    url: `https://www.omdbapi.com/?i=tt3896198&apikey=d48c8ef8&s=${inputValue}`,
     success: (hasil) => {
       $(".loading").toggleClass("d-none");
 
@@ -106,7 +106,7 @@ $(".tombol-pencarian").on("click", function () {
       $(".movie-detail-button").on("click", function () {
         let dataImdbid = $(this).data("imdbid");
         $.ajax({
-          url: `http://www.omdbapi.com/?i=${dataImdbid}&apikey=d48c8ef8&=`,
+          url: `https://www.omdbapi.com/?i=${dataImdbid}&apikey=d48c8ef8&=`,
           success: (m) => {
             const movieDetails = showDetailMovies(m);
             console.log(m);
